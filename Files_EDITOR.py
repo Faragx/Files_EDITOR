@@ -1,5 +1,6 @@
+from tkinter import filedialog
 import os
-file_path=input("Enter path : ")
+file_path=filedialog.askdirectory()
 files = os.listdir(file_path)
 
 while True:
@@ -19,6 +20,10 @@ while True:
     
     elif choose=="2":
         added_word =str(input('add letter or word:  '))
+        for n,file in enumerate(files[0],1):
+            print(f'[{n}]{file}',end=" || ")
+
+
         position =int(input('position :  '))
         for dfile in files:
     
